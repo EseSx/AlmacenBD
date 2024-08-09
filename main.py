@@ -20,7 +20,15 @@ while True:
     pregunta1 = input(f"Que accion desea realizar ({rojo}I{final}ngresar datos, {rojo}M{final}odificar datos, {rojo}E{final}liminar datos, {rojo}V{final}er datos y {rojo}S{final}istema de ventas): \n").lower()
 
     if (pregunta1[0] == "i"):
-        pass
+        listacontraseñas = cursor.execute("SELECT * FROM Contraseñas")
+        contraseña = input("Ingrese contraseña de administrador: ")
+
+        for i in listacontraseñas:
+            if contraseña.lower() == i[1]:
+                nombre = input("Ingrese el nombre del proveedor: ")
+                productoVen = int(input("Ingrese la cantidad de productos ingresados: "))
+                fechaDeCom = input("Ingrese la fecha de ingreso del producto (DD/MM/AA): ")
+
     elif (pregunta1[0] == "m"):
         pass
     elif (pregunta1[0] == "e"):
@@ -30,4 +38,4 @@ while True:
     elif (pregunta1[0] == "s"):
         pass
     else:
-        print(f"El comando ingresado no a sido reconocido.\nPruebe con uno de los siguientes comandos I <- Para ingresar datos | M <- Para modificar datos existentes |")
+        print(f"El comando ingresado no a sido reconocido.\nPruebe con uno de los siguientes comandos I <- Para ingresar datos | M <- Para modificar datos existentes | E <- Para eliminar datos | V <- para ver datos | S <- Para acceder al sistema de ventas")
