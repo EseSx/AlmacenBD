@@ -16,7 +16,7 @@ from proveedor import Proveedor
 import db
 
 # Zona de BD
-contraseñasbd = sqlite3.connect("../contraseñas.db")
+contraseñasbd = sqlite3.connect("contraseñas.db")
 cursor = contraseñasbd.cursor()
 
 # Zona main
@@ -48,7 +48,34 @@ while True:
                 db.agregar(proovedorIng, productoIng)
 
     elif (pregunta1[0] == "m"):
-        pass
+        listacontraseñas = cursor.execute("SELECT * FROM Contraseñas")
+        contraseña = input("Ingrese contraseña de administrador: ")
+
+        for i in listacontraseñas:
+            if contraseña.lower() == i[1]:
+                PPOV = input(f"Que tabla desea modificar {rojo}Prov{final}eedor, {rojo}Prod{final}ucto, {rojo}V{final}enta: ").lower()
+
+                if (PPOV[0] == "p" and PPOV[3] == "v"):
+                    confirmacion = input("Esta seguro de que quiere modificar algun dato de la tabla de proveedores?: ").lower()
+
+                    if (confirmacion[0] == "s"):
+                        db.actualizar(PPOV)
+
+                elif (PPOV[0] == "p" and PPOV[3] == "d"):
+                    confirmacion = input("Esta seguro de que quiere modificar algun dato de la tabla de productos?: ").lower()
+
+                    if (confirmacion[0] == "s"):
+                        db.actualizar(PPOV)
+                
+                elif (PPOV[0] == "v"):
+                    confirmacion = input("Esta seguro de que quiere modificar algun dato de la tabla de venta?: ").lower()
+
+                    if (confirmacion[0] == "s"):
+                        db.actualizar(PPOV)
+                
+                else:
+                    print(f"Ninguno de los comandos ingresados es correcto para modificar proveedor ingrese -> {rojo}PROV{final} | producto ingrese -> {rojo}PROD{final} | venta ingrese -> {rojo}V{final}")
+
     elif (pregunta1[0] == "e"):
         pass
     elif (pregunta1[0] == "v"):
