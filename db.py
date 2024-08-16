@@ -25,51 +25,103 @@ def agregar(proveedor, producto):
 
     Almacendb.commit()
 
-def borrar():
-    pass
+def borrar(PPOV):
+    confirmacion = True
+    while (confirmacion == True):
+        if (PPOV[0] == "p" and PPOV[3] == "v"):
+            listaProveedor = cursor.execute("SELECT * FROM proveedor")
+            for i in listaProveedor:
+                print(f"Columna nº{i[0]}: \n nombre: {i[1]} \n productoVen: {i[2]} \n fechaDeCom: {i[3]} \n cantidadCom: {i[4]} \n nombrePro: {i[5]}")
+
+            columnaEliminar = input("Cual de las columnas presentadas anteriormente desea eliminar? \n")
+            cursor.execute(f"DELETE FROM proveedor WHERE id = {columnaEliminar}")
+
+            Almacendb.commit()
+            Almacendb.close()
+        
+        elif (PPOV[0] == "p" and PPOV[3] == "d"):
+            listaProductos = cursor.execute("SELECT productos.vencimiento, productos.precioVen, productos.precioXPro, proveedor.nombre, proveedor.productoVen, proveedor.cantidadCom, proveedor.nombrePro FROM productos INNER JOIN proveedor ON productos.id_proveedor = proveedor.id")
+            for i in listaProductos:
+                print(f"Columna nº{i[0]}: \n vencimiento: {i[1]} \n precioVen: {i[2]} \n precioXPro: {i[3]}")
+
+            columnaEliminar = input("Cual de las columnas presentadas anteriormente desea eliminar? \n")
+            cursor.execute(f"DELETE FROM productos WHERE id = {columnaEliminar}")
+
+            Almacendb.commit()
+            Almacendb.close()
+
+        elif (PPOV[0] == "v"):
+            listaVenta = cursor.execute("SELECT venta.dia, venta.cantidadTot, venta.precioTot, productos.vencimiento, productos.precioVen, productos.precioXPro, proveedor.nombre, proveedor.productoVen, proveedor.cantidadCom, proveedor.nombrePro FROM venta INNER JOIN productos ON venta.id_producto = productos.id INNER JOIN proveedor ON productos.id_proveedor = proveedor.id")
+            for i in listaVenta:
+                print(f"Columna nº{i[0]}: \n dia: {i[1]} \n cantidadTot: {i[2]} \n precioTot: {i[3]}")
+
+            campoModificar = input("Cual de los datos presentados anteriormente desea modificar? \n")
+            cambio = input("Ingrese el valor modificado: ")
+            columnaModificar = input("Cual de las columnas presentadas anteriormente desea modificar? \n")
+
+            cursor.execute(f"UPDATE venta SET {campoModificar} = {cambio} WHERE id = {columnaModificar}")
+
+            Almacendb.commit()
+            Almacendb.close()
+    
+    confirmacion = input("Desea modificar otro valor? \n").lower()
+
+    if (confirmacion[0] == "s"):
+       confirmacion = True
+    else:
+        confirmacion = False
 
 def actualizar(PPOV):
-    if (PPOV[0] == "p" and PPOV[3] == "v"):
-        listaProveedor = cursor.execute("SELECT * FROM proveedor")
-        for i in listaProveedor:
-            print(f"Columna nº{i[0]}: \n nombre: {i[1]} \n productoVen: {i[2]} \n fechaDeCom: {i[3]} \n cantidadCom: {i[4]} \n nombrePro: {i[5]}")
+    confirmacion = True
+    while (confirmacion == True):
+        if (PPOV[0] == "p" and PPOV[3] == "v"):
+            listaProveedor = cursor.execute("SELECT * FROM proveedor")
+            for i in listaProveedor:
+                print(f"Columna nº{i[0]}: \n nombre: {i[1]} \n productoVen: {i[2]} \n fechaDeCom: {i[3]} \n cantidadCom: {i[4]} \n nombrePro: {i[5]}")
+            
+            campoModificar = input("Cual de los datos presentados anteriormente desea modificar? \n")
+            cambio = input("Ingrese el valor modificado: ")
+            columnaModificar = input("Cual de las columnas presentadas anteriormente desea modificar? \n")
+
+            cursor.execute(f"UPDATE proveedor SET {campoModificar} = {cambio} WHERE id = {columnaModificar}")
+
+            Almacendb.commit()
+            Almacendb.close()
         
-        campoModificar = input("Cual de los datos presentados anteriormente desea modificar? \n")
-        cambio = input("Ingrese el valor modificado: ")
-        columnaModificar = input("Cual de las columnas presentadas anteriormente desea modificar? \n")
+        elif (PPOV[0] == "p" and PPOV[3] == "d"):
+            listaProductos = cursor.execute("SELECT productos.vencimiento, productos.precioVen, productos.precioXPro, proveedor.nombre, proveedor.productoVen, proveedor.cantidadCom, proveedor.nombrePro FROM productos INNER JOIN proveedor ON productos.id_proveedor = proveedor.id")
+            for i in listaProductos:
+                print(f"Columna nº{i[0]}: \n vencimiento: {i[1]} \n precioVen: {i[2]} \n precioXPro: {i[3]}")
 
-        cursor.execute(f"UPDATE proveedor SET {campoModificar} = {cambio} WHERE id = {columnaModificar}")
+            campoModificar = input("Cual de los datos presentados anteriormente desea modificar? \n")
+            cambio = input("Ingrese el valor modificado: ")
+            columnaModificar = input("Cual de las columnas presentadas anteriormente desea modificar? \n")
 
-        Almacendb.commit()
-        Almacendb.close()
+            cursor.execute(f"UPDATE productos SET {campoModificar} = {cambio} WHERE id = {columnaModificar}")
+
+            Almacendb.commit()
+            Almacendb.close()
+
+        elif (PPOV[0] == "v"):
+            listaVenta = cursor.execute("SELECT venta.dia, venta.cantidadTot, venta.precioTot, productos.vencimiento, productos.precioVen, productos.precioXPro, proveedor.nombre, proveedor.productoVen, proveedor.cantidadCom, proveedor.nombrePro FROM venta INNER JOIN productos ON venta.id_producto = productos.id INNER JOIN proveedor ON productos.id_proveedor = proveedor.id")
+            for i in listaVenta:
+                print(f"Columna nº{i[0]}: \n dia: {i[1]} \n cantidadTot: {i[2]} \n precioTot: {i[3]}")
+
+            campoModificar = input("Cual de los datos presentados anteriormente desea modificar? \n")
+            cambio = input("Ingrese el valor modificado: ")
+            columnaModificar = input("Cual de las columnas presentadas anteriormente desea modificar? \n")
+
+            cursor.execute(f"UPDATE venta SET {campoModificar} = {cambio} WHERE id = {columnaModificar}")
+
+            Almacendb.commit()
+            Almacendb.close()
     
-    elif (PPOV[0] == "p" and PPOV[3] == "d"):
-        listaProductos = cursor.execute("SELECT productos.vencimiento, productos.precioVen, productos.precioXPro, proveedor.nombre, proveedor.productoVen, proveedor.cantidadCom, proveedor.nombrePro FROM productos INNER JOIN proveedor ON productos.id_proveedor = proveedor.id")
-        for i in listaProductos:
-            print(f"Columna nº{i[0]}: \n vencimiento: {i[1]} \n precioVen: {i[2]} \n precioXPro: {i[3]}")
+    confirmacion = input("Desea modificar otro valor? \n").lower()
 
-        campoModificar = input("Cual de los datos presentados anteriormente desea modificar? \n")
-        cambio = input("Ingrese el valor modificado: ")
-        columnaModificar = input("Cual de las columnas presentadas anteriormente desea modificar? \n")
-
-        cursor.execute(f"UPDATE productos SET {campoModificar} = {cambio} WHERE id = {columnaModificar}")
-
-        Almacendb.commit()
-        Almacendb.close()
-
-    elif (PPOV[0] == "v"):
-        listaVenta = cursor.execute("SELECT venta.dia, venta.cantidadTot, venta.precioTot, productos.vencimiento, productos.precioVen, productos.precioXPro, proveedor.nombre, proveedor.productoVen, proveedor.cantidadCom, proveedor.nombrePro FROM venta INNER JOIN productos ON venta.id_producto = productos.id INNER JOIN proveedor ON productos.id_proveedor = proveedor.id")
-        for i in listaVenta:
-            print(f"Columna nº{i[0]}: \n dia: {i[1]} \n cantidadTot: {i[2]} \n precioTot: {i[3]}")
-
-        campoModificar = input("Cual de los datos presentados anteriormente desea modificar? \n")
-        cambio = input("Ingrese el valor modificado: ")
-        columnaModificar = input("Cual de las columnas presentadas anteriormente desea modificar? \n")
-
-        cursor.execute(f"UPDATE venta SET {campoModificar} = {cambio} WHERE id = {columnaModificar}")
-
-        Almacendb.commit()
-        Almacendb.close()
+    if (confirmacion[0] == "s"):
+       confirmacion = True
+    else:
+        confirmacion = False
 
 # Modificar
 Almacendb.commit()
