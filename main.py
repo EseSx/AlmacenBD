@@ -32,16 +32,16 @@ while True:
         for i in listacontraseñas:
             if contraseña.lower() == i[1]:
                 nombre = input("Ingrese el nombre del proveedor: ")
-                productoVen = int(input("Ingrese la cantidad de productos ingresados: "))
+                productoVen = input("Ingrese la cantidad de productos ingresados: ")
                 fechaDeCom = input("Ingrese la fecha de ingreso del producto (DD/MM/AA): ")
-                cantidadCom = int(input("Ingrese el precio de compra del producto: "))
+                cantidadCom = input("Ingrese el precio de compra del producto: ")
                 nombrePro = input("Ingrese el nombre del producto: ")
 
                 proovedorIng = Proveedor(nombre, productoVen, fechaDeCom, cantidadCom, nombrePro)
                 
                 vencimiento = input("Ingrese la fecha de vencimiento de los productos ingresados (DD/MM/AA): ")
-                precioVen = int(input("Ingrese precio de venta de los productos: "))
-                precioXPro = int(input("Ingrese el precio individual de los productos: "))
+                precioVen = input("Ingrese precio de venta de los productos: ")
+                precioXPro = input("Ingrese el precio individual de los productos: ")
 
                 productoIng = Productos(vencimiento, precioVen, precioXPro)
 
@@ -77,7 +77,14 @@ while True:
                     print(f"Ninguno de los comandos ingresados es correcto para modificar proveedor ingrese -> {rojo}PROV{final} | producto ingrese -> {rojo}PROD{final} | venta ingrese -> {rojo}V{final}")
 
     elif (pregunta1[0] == "e"):
-        pass
+        listacontraseñas = cursor.execute("SELECT * FROM Contraseñas")
+        contraseña = input("Ingrese contraseña de administrador: ")
+
+        for i in listacontraseñas:
+            if contraseña.lower() == i[1]:
+                
+                pass
+
     elif (pregunta1[0] == "v"):
         pass
     elif (pregunta1[0] == "s"):
