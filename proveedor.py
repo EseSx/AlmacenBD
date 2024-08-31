@@ -1,6 +1,6 @@
-#tabla de proveedores
+# tabla de proveedores
 class Proveedor:
-    def __init__(self,Nombre,ProductoVen,FechaDeCom,CantidadCom,NombrePro):
+    def __init__(self, Nombre, ProductoVen, FechaDeCom, CantidadCom, NombrePro):
         self.nombre = Nombre
         self.productoVen = ProductoVen
         self.fechaDeCom = FechaDeCom
