@@ -532,7 +532,7 @@ while True:
                         for dato in resultados:
                             id_venta = dato[0]
                             fila = db.cursor.execute(
-                                "SELECT venta.dia, venta.cantidadTot, venta.precioTot, venta.numeroVenta, productos.vencimiento, productos.precioVen, productos.precioXPro, proveedor.nombre, proveedor.productoVen, proveedor.cantidadCom, proveedor.nombrePro FROM venta INNER JOIN productos ON venta.id_producto = productos.id INNER JOIN proveedor ON productos.id_proveedor = proveedor.id WHERE venta.id = ?",
+                                "SELECT venta.id, venta.dia, venta.cantidadTot, venta.precioTot, venta.numeroVenta, productos.vencimiento, productos.precioVen, productos.precioXPro, proveedor.nombre, proveedor.productoVen, proveedor.cantidadCom, proveedor.nombrePro FROM venta INNER JOIN productos ON venta.id_producto = productos.id INNER JOIN proveedor ON productos.id_proveedor = proveedor.id WHERE venta.id = ?",
                                 (id_venta,),
                             )
                             fila = db.cursor.fetchall()
@@ -540,12 +540,12 @@ while True:
                             if fila:
                                 for i in fila:
                                     print(
-                                        f"\nColumna nº{i[0]}: \n dia: {i[1]} \n Cantidad total del producto vendido: {i[2]} \n Precio total del producto vendido y sus unidades: {i[3]} \n Numero de la venta: {i[4]} \n Nombre del producto vendido: {i[11]} \n Precio individual del producto: {i[6]}\n"
+                                        f"\nColumna nº{i[0]}: \n dia: {i[1]} \n Cantidad total del producto vendido: {i[2]} \n Precio total del producto vendido y sus unidades: {i[3]} \n Numero de la venta: {i[4]} \n Nombre del producto vendido: {i[11]} \n Precio individual del producto: {i[7]}\n"
                                     )
                                     continuar = input(f'Si desea continuar pulse cualquier boton: ').lower()
 
-                                    if continuar == str or continuar == int:
-                                        continue
+                                if continuar == str or continuar == int:
+                                    break
 
                     else:
                         print("No se encontraron ventas")
@@ -562,7 +562,7 @@ while True:
                         for dato in resultados:
                             id_venta = dato[0]
                             fila = db.cursor.execute(
-                                "SELECT venta.dia, venta.cantidadTot, venta.precioTot, venta.numeroVenta, productos.vencimiento, productos.precioVen, productos.precioXPro, proveedor.nombre, proveedor.productoVen, proveedor.cantidadCom, proveedor.nombrePro FROM venta INNER JOIN productos ON venta.id_producto = productos.id INNER JOIN proveedor ON productos.id_proveedor = proveedor.id WHERE venta.id = ?",
+                                "SELECT venta.id, venta.dia, venta.cantidadTot, venta.precioTot, venta.numeroVenta, productos.vencimiento, productos.precioVen, productos.precioXPro, proveedor.nombre, proveedor.productoVen, proveedor.cantidadCom, proveedor.nombrePro FROM venta INNER JOIN productos ON venta.id_producto = productos.id INNER JOIN proveedor ON productos.id_proveedor = proveedor.id WHERE venta.id = ?",
                                 (id_venta,),
                             )
                             fila = db.cursor.fetchall()
@@ -570,7 +570,7 @@ while True:
                             if fila:
                                 for i in fila:
                                     print(
-                                        f"\nColumna nº{i[0]}: \n dia: {i[1]} \n Cantidad total del producto vendido: {i[2]} \n Precio total del producto vendido y sus unidades: {i[3]} \n Numero de la venta: {i[4]} \n Nombre del producto vendido: {i[11]} \n Precio individual del producto: {i[6]}\n"
+                                        f"\nColumna nº{i[0]}: \n dia: {i[1]} \n Cantidad total del producto vendido: {i[2]} \n Precio total del producto vendido y sus unidades: {i[3]} \n Numero de la venta: {i[4]} \n Nombre del producto vendido: {i[11]} \n Precio individual del producto: {i[7]}\n"
                                     )
                                     continuar = input(f'Si desea continuar pulse cualquier boton: ').lower()
 
@@ -592,7 +592,7 @@ while True:
                         for dato in resultados:
                             id_venta = dato[0]
                             fila = db.cursor.execute(
-                                "SELECT venta.dia, venta.cantidadTot, venta.precioTot, venta.numeroVenta, productos.vencimiento, productos.precioVen, productos.precioXPro, proveedor.nombre, proveedor.productoVen, proveedor.cantidadCom, proveedor.nombrePro FROM venta INNER JOIN productos ON venta.id_producto = productos.id INNER JOIN proveedor ON productos.id_proveedor = proveedor.id WHERE venta.id = ?",
+                                "SELECT venta.id, venta.dia, venta.cantidadTot, venta.precioTot, venta.numeroVenta, productos.vencimiento, productos.precioVen, productos.precioXPro, proveedor.nombre, proveedor.productoVen, proveedor.cantidadCom, proveedor.nombrePro FROM venta INNER JOIN productos ON venta.id_producto = productos.id INNER JOIN proveedor ON productos.id_proveedor = proveedor.id WHERE venta.id = ?",
                                 (id_venta,),
                             )
                             fila = db.cursor.fetchall()
@@ -600,7 +600,7 @@ while True:
                             if fila:
                                 for i in fila:
                                     print(
-                                        f"\nColumna nº{i[0]}: \n dia: {i[1]} \n Cantidad total del producto vendido: {i[2]} \n Precio total del producto vendido y sus unidades: {i[3]} \n Numero de la venta: {i[4]} \n Nombre del producto vendido: {i[11]} \n Precio individual del producto: {i[6]}\n"
+                                        f"\nColumna nº{i[0]}: \n dia: {i[1]} \n Cantidad total del producto vendido: {i[2]} \n Precio total del producto vendido y sus unidades: {i[3]} \n Numero de la venta: {i[4]} \n Nombre del producto vendido: {i[11]} \n Precio individual del producto: {i[7]}\n"
                                     )
                                     continuar = input(f'Si desea continuar pulse cualquier boton: ').lower()
 
@@ -622,7 +622,7 @@ while True:
                         for dato in resultados:
                             id_venta = dato[0]
                             fila = db.cursor.execute(
-                                "SELECT venta.dia, venta.cantidadTot, venta.precioTot, venta.numeroVenta, productos.vencimiento, productos.precioVen, productos.precioXPro, proveedor.nombre, proveedor.productoVen, proveedor.cantidadCom, proveedor.nombrePro FROM venta INNER JOIN productos ON venta.id_producto = productos.id INNER JOIN proveedor ON productos.id_proveedor = proveedor.id WHERE venta.id = ?",
+                                "SELECT venta.id, venta.dia, venta.cantidadTot, venta.precioTot, venta.numeroVenta, productos.vencimiento, productos.precioVen, productos.precioXPro, proveedor.nombre, proveedor.productoVen, proveedor.cantidadCom, proveedor.nombrePro FROM venta INNER JOIN productos ON venta.id_producto = productos.id INNER JOIN proveedor ON productos.id_proveedor = proveedor.id WHERE venta.id = ?",
                                 (id_venta,),
                             )
                             fila = db.cursor.fetchall()
@@ -630,7 +630,7 @@ while True:
                             if fila:
                                 for i in fila:
                                     print(
-                                        f"\nColumna nº{i[0]}: \n dia: {i[1]} \n Cantidad total del producto vendido: {i[2]} \n Precio total del producto vendido y sus unidades: {i[3]} \n Numero de la venta: {i[4]} \n Nombre del producto vendido: {i[11]} \n Precio individual del producto: {i[6]}\n"
+                                        f"\nColumna nº{i[0]}: \n dia: {i[1]} \n Cantidad total del producto vendido: {i[2]} \n Precio total del producto vendido y sus unidades: {i[3]} \n Numero de la venta: {i[4]} \n Nombre del producto vendido: {i[11]} \n Precio individual del producto: {i[7]}\n"
                                     )
                                     continuar = input(f'Si desea continuar pulse cualquier boton: ').lower()
 
