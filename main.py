@@ -258,6 +258,11 @@ while True:
                                         f"\nColumna nº{i[0]}: \n Nombre: {i[1]} \n Precio de venta del producto del proveedor: {i[2]} \n Fecha de compra: {i[3]} \n Cantidad del producto comprado: {i[4]} \n Nombre de producto: {i[5]}\n"
                                     )  # Imprimo los datos obtenidos
 
+                                    continuar = input(f'Si desea continuar pulse cualquier boton: ').lower()
+
+                                    if continuar == str or continuar == int:
+                                        continue
+
                     else:
                         print(
                             "No se encontraron proveedores"
@@ -286,6 +291,10 @@ while True:
                                     print(
                                         f"\nColumna nº{i[0]}: \n Nombre: {i[1]} \n Precio de venta del producto del proveedor: {i[2]} \n Fecha de compra: {i[3]} \n Cantidad del producto comprado: {i[4]} \n Nombre de producto: {i[5]}\n"
                                     )
+                                    continuar = input(f'Si desea continuar pulse cualquier boton: ').lower()
+
+                                    if continuar == str or continuar == int:
+                                        continue
 
                     else:
                         print("No se encontraron proveedores")
@@ -312,6 +321,10 @@ while True:
                                     print(
                                         f"\nColumna nº{i[0]}: \n Nombre: {i[1]} \n Precio de venta del producto del proveedor: {i[2]} \n Fecha de compra: {i[3]} \n Cantidad del producto comprado: {i[4]} \n Nombre de producto: {i[5]}\n"
                                     )
+                                    continuar = input(f'Si desea continuar pulse cualquier boton: ').lower()
+
+                                    if continuar == str or continuar == int:
+                                        continue
 
                     else:
                         print("No se encontraron proveedores")
@@ -338,6 +351,10 @@ while True:
                                     print(
                                         f"\nColumna nº{i[0]}: \n Nombre: {i[1]} \n Precio de venta del producto del proveedor: {i[2]} \n Fecha de compra: {i[3]} \n Cantidad del producto comprado: {i[4]} \n Nombre de producto: {i[5]}\n"
                                     )
+                                    continuar = input(f'Si desea continuar pulse cualquier boton: ').lower()
+
+                                    if continuar == str or continuar == int:
+                                        continue
 
                     else:
                         print("No se encontraron proveedores")
@@ -364,6 +381,10 @@ while True:
                                     print(
                                         f"\nColumna nº{i[0]}: \n Nombre: {i[1]} \n Precio de venta del producto del proveedor: {i[2]} \n Fecha de compra: {i[3]} \n Cantidad del producto comprado: {i[4]} \n Nombre de producto: {i[5]}\n"
                                     )
+                                    continuar = input(f'Si desea continuar pulse cualquier boton: ').lower()
+
+                                    if continuar == str or continuar == int:
+                                        continue
 
                     else:
                         print("No se encontraron proveedores")
@@ -412,6 +433,10 @@ while True:
                                     print(
                                         f"\nColumna nº{i[0]}: \n Vencimiento: {i[1]} \n Precio de venta: {i[2]} \n Precio por producto: {i[3]} \n Proveedor nombre: {i[4]} \n Precio de venta del producto del proveedor: {i[5]} \n Cantidad del producto comprado: {i[6]} \n Nombre de producto: {i[7]}\n"
                                     )
+                                    continuar = input(f'Si desea continuar pulse cualquier boton: ').lower()
+
+                                    if continuar == str or continuar == int:
+                                        continue
 
                     else:
                         print("No se encontraron productos")
@@ -438,6 +463,10 @@ while True:
                                     print(
                                         f"\nColumna nº{i[0]}: \n Vencimiento: {i[1]} \n Precio de venta: {i[2]} \n Precio por producto: {i[3]} \n Proveedor nombre: {i[4]} \n Precio de venta del producto del proveedor: {i[5]} \n Cantidad del producto comprado: {i[6]} \n Nombre de producto: {i[7]}\n"
                                     )
+                                    continuar = input(f'Si desea continuar pulse cualquier boton: ').lower()
+
+                                    if continuar == str or continuar == int:
+                                        continue
 
                     else:
                         print("No se encontraron productos")
@@ -464,6 +493,10 @@ while True:
                                     print(
                                         f"\nColumna nº{i[0]}: \n Vencimiento: {i[1]} \n Precio de venta: {i[2]} \n Precio por producto: {i[3]} \n Proveedor nombre: {i[4]} \n Precio de venta del producto del proveedor: {i[5]} \n Cantidad del producto comprado: {i[6]} \n Nombre de producto: {i[7]}\n"
                                     )
+                                    continuar = input(f'Si desea continuar pulse cualquier boton: ').lower()
+
+                                    if continuar == str or continuar == int:
+                                        continue
 
                     else:
                         print("No se encontraron productos")
@@ -509,6 +542,10 @@ while True:
                                     print(
                                         f"\nColumna nº{i[0]}: \n dia: {i[1]} \n Cantidad total del producto vendido: {i[2]} \n Precio total del producto vendido y sus unidades: {i[3]} \n Numero de la venta: {i[4]} \n Nombre del producto vendido: {i[11]} \n Precio individual del producto: {i[6]}\n"
                                     )
+                                    continuar = input(f'Si desea continuar pulse cualquier boton: ').lower()
+
+                                    if continuar == str or continuar == int:
+                                        continue
 
                     else:
                         print("No se encontraron ventas")
@@ -535,6 +572,10 @@ while True:
                                     print(
                                         f"\nColumna nº{i[0]}: \n dia: {i[1]} \n Cantidad total del producto vendido: {i[2]} \n Precio total del producto vendido y sus unidades: {i[3]} \n Numero de la venta: {i[4]} \n Nombre del producto vendido: {i[11]} \n Precio individual del producto: {i[6]}\n"
                                     )
+                                    continuar = input(f'Si desea continuar pulse cualquier boton: ').lower()
+
+                                    if continuar == str or continuar == int:
+                                        continue
 
                     else:
                         print("No se encontraron ventas")
@@ -561,6 +602,10 @@ while True:
                                     print(
                                         f"\nColumna nº{i[0]}: \n dia: {i[1]} \n Cantidad total del producto vendido: {i[2]} \n Precio total del producto vendido y sus unidades: {i[3]} \n Numero de la venta: {i[4]} \n Nombre del producto vendido: {i[11]} \n Precio individual del producto: {i[6]}\n"
                                     )
+                                    continuar = input(f'Si desea continuar pulse cualquier boton: ').lower()
+
+                                    if continuar == str or continuar == int:
+                                        continue
 
                     else:
                         print("No se encontraron ventas")
@@ -587,6 +632,10 @@ while True:
                                     print(
                                         f"\nColumna nº{i[0]}: \n dia: {i[1]} \n Cantidad total del producto vendido: {i[2]} \n Precio total del producto vendido y sus unidades: {i[3]} \n Numero de la venta: {i[4]} \n Nombre del producto vendido: {i[11]} \n Precio individual del producto: {i[6]}\n"
                                     )
+                                    continuar = input(f'Si desea continuar pulse cualquier boton: ').lower()
+
+                                    if continuar == str or continuar == int:
+                                        continue
 
                     else:
                         print("No se encontraron ventas")
@@ -623,29 +672,32 @@ while True:
                 f"SELECT cantidadCom, id FROM proveedor WHERE nombrePro LIKE '{producto}'"
             )
             resProveedor = db.cursor.fetchone()
-            cantidadActualizada = float(resProveedor[0]) - int(cantidad)
+            if resProveedor:
+                cantidadActualizada = float(resProveedor[0]) - int(cantidad)
 
-            db.cursor.execute(
-                f"UPDATE proveedor SET cantidadCom = {cantidadActualizada} WHERE id = {resProveedor[1]}"
-            )  # Solicito la cantidad de unidades que hay de un producto y les descuento la cantidad que compraron
+                db.cursor.execute(
+                    f"UPDATE proveedor SET cantidadCom = {cantidadActualizada} WHERE id = {resProveedor[1]}"
+                )  # Solicito la cantidad de unidades que hay de un producto y les descuento la cantidad que compraron
 
-            conseguirDesdeProductos = db.cursor.execute(
-                f"SELECT precioXPro, id FROM productos WHERE id_proveedor LIKE '{resProveedor[1]}'"
-            )
-            resProductos = db.cursor.fetchone()
+                conseguirDesdeProductos = db.cursor.execute(
+                    f"SELECT precioXPro, id FROM productos WHERE id_proveedor LIKE '{resProveedor[1]}'"
+                )
+                resProductos = db.cursor.fetchone()
 
-            pagoActual += (resProductos[0]) * int(cantidad)
-            print(
-                f"PRECIO TOTAL DE LA COMPRA: ${pagoActual}"
-            )  # Consigo el precio, lo calculo y entrego el precio total de la compra
+                pagoActual += (resProductos[0]) * int(cantidad)
+                print(
+                    f"PRECIO TOTAL DE LA COMPRA: ${pagoActual}"
+                )  # Consigo el precio, lo calculo y entrego el precio total de la compra
 
-            ventaing = venta(
-                dia, cantidad, pagoActual, contador
-            )  # Uso POO para organizar todos los datos obtenidos
+                ventaing = venta(
+                    dia, cantidad, pagoActual, contador
+                )  # Uso POO para organizar todos los datos obtenidos
 
-            db.venta(ventaing, resProductos[1])  # Le envio los datos al codigo de la BD
+                db.venta(ventaing, resProductos[1])  # Le envio los datos al codigo de la BD
 
-            db.Almacendb.commit()  # Confirmo los cambios hechos en el main
+                db.Almacendb.commit()  # Confirmo los cambios hechos en el main
+            else:
+                continue
 
             cuestion = input(
                 f"Desea ingresar otro producto ({rojo}S{final}i, {rojo}N{final}o)"
